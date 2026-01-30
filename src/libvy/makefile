@@ -15,7 +15,14 @@ DIR =		home/adacomp/lib
 AR =		ar
 CC =		gcc
 SHELL =		/bin/sh
-CFLAGS =	-ggdb -O
+SDKROOT =	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS =	-isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+		-Wno-implicit-int \
+		-Wno-implicit-function-declaration \
+		-Wno-return-type \
+		-Wno-int-conversion \
+		-Wno-incompatible-pointer-types \
+		-Wno-builtin-declaration-mismatch
 
 ALLOBJS =	$(O)/creat_val.o $(O)/del_symbol.o $(O)/main.o $(O)/rr_bonus.o  \
 	$(O)/rr_insert.o $(O)/rr_skip.o $(O)/rr_usermess.o  \

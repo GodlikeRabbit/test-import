@@ -367,8 +367,6 @@ ac	t;
 char	*s;
 char	*a;
 {
-	static bool const_type ();
-
 	if (t == NULL)
 	   return std_integer;
 

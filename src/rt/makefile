@@ -1,12 +1,20 @@
 SHELL	= /bin/sh
 AS	= /bin/as
 AR	= ar
-CC	= cc
+CC	= gcc
 LD	= ld
 LIB	= /usr/lib
-CFLAGS	= -O -OI -X -DTG_68000 $(DEBUG) $(PRINT)
+SDKROOT	= /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS	= -isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+	  -Wno-implicit-int \
+	  -Wno-implicit-function-declaration \
+	  -Wno-return-type \
+	  -Wno-int-conversion \
+	  -Wno-incompatible-pointer-types \
+	  -Wno-builtin-declaration-mismatch \
+	  -DTG_68000 $(DEBUG) $(PRINT)
 # WARNING: do not compile wait.c with OI flag
-C2FLAGS	= -O -X -DTG_68000 $(DEBUG) $(PRINT)
+C2FLAGS	= -std=gnu89 -O2 -w -Wno-error -DTG_68000 $(DEBUG) $(PRINT)
 PRINT	=
 DEBUG	= -DDEBUG
 

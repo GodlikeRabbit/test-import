@@ -72,7 +72,7 @@ typedef INDEX	*INDEXP;
 #define	PARBASE		3 * TADDRSIZE
 #define	LINK_OFFSET	2 * TADDRSIZE
 #define	FRAMBASE	SToff_BASE + TADDRSIZE
-#endif EM
+#endif /* EM */
 
 #define	NREGS	10	/* a2-a5 en d2 - d7	*/
 
@@ -100,7 +100,7 @@ typedef MAXTYPE *MAXTYPEP;
 typedef unsigned TG_word	MAXADDR;
 #else
 typedef unsigned short		MAXADDR;
-#endif TG_PDP11
+#endif /* TG_PDP11 */
 typedef MAXADDR *MAXADDRP;
 
 /*

@@ -14,7 +14,15 @@ TARGET =	veyacc
 DIR =		usr/bin
 
 SHELL =		/bin/sh
-CFLAGS =	-O
+CC =		gcc
+SDKROOT =	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS =	-isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+		-Wno-implicit-int \
+		-Wno-implicit-function-declaration \
+		-Wno-return-type \
+		-Wno-int-conversion \
+		-Wno-incompatible-pointer-types \
+		-Wno-builtin-declaration-mismatch
 
 ALLOBJS =	$(O)/y1.o $(O)/y2.o $(O)/y3.o $(O)/y4.o $(O)/y5.o $(O)/y6.o  \
 	$(O)/y7.o $(O)/y8.o 

@@ -57,7 +57,7 @@ rec_fields (|x):
 		rec_fields (|x) rec_field (|x);
 
 rec_field (|x):	field_type (|x, ^t) id_list (|x, t) SEMCOL =
-		{ cfree ($t);
+		{ free ($t);
 		} |
 		record_start (^x1) rec_fields (|x1)
                              RBRACK opt_ident SEMCOL =

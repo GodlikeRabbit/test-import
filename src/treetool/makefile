@@ -1,10 +1,17 @@
 # makefile for treetool
 # veyacc version
 SHELL	= /bin/sh
-CC	= cc
+CC	= gcc
 YACC	= ../veyacc/veyacc
 
-CFLAGS	= -O
+SDKROOT	= /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS	= -isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+	  -Wno-implicit-int \
+	  -Wno-implicit-function-declaration \
+	  -Wno-return-type \
+	  -Wno-int-conversion \
+	  -Wno-incompatible-pointer-types \
+	  -Wno-builtin-declaration-mismatch
 LIBS	= -ll
 
 

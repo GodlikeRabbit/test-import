@@ -13,7 +13,16 @@ HEADER  = $(INCL) ptrace.h context.h mode.h
 
 #LIB	=  libman.a -ll -lc
 LIB	=  ${DAPSE}/viewlib.a -ll -lc
-CFLAGS	=  -I${DAPSE} -DVAX
+CC	= gcc
+SDKROOT	= /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS	= -isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+	  -Wno-implicit-int \
+	  -Wno-implicit-function-declaration \
+	  -Wno-return-type \
+	  -Wno-int-conversion \
+	  -Wno-incompatible-pointer-types \
+	  -Wno-builtin-declaration-mismatch \
+	  -I${DAPSE} -DVAX
 
 FILES	= command.o context.o line.o main.o\
        	  get_tree.o lib_read.o record_man.o std.o rec_sizes.o\

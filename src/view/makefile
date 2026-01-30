@@ -1,5 +1,14 @@
 SYSTEM = PC
-CFLAGS = -ggdb -c -D${SYSTEM} 
+CC = gcc
+SDKROOT = /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS = -isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+	 -Wno-implicit-int \
+	 -Wno-implicit-function-declaration \
+	 -Wno-return-type \
+	 -Wno-int-conversion \
+	 -Wno-incompatible-pointer-types \
+	 -Wno-builtin-declaration-mismatch \
+	 -c -D${SYSTEM}
 DAPSE = ../das
 HEADERS = ../h
 OBJS = cungen.o view1.o view2.o view3.o def_lib.o compload.o\

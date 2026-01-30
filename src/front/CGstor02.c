@@ -246,7 +246,8 @@ MAXADDR	off;
 	
 	if (g_rettype (g_specif (x)) != notype) {
 	   off += pcc_size (pcc_type_of (g_rettype (g_specif (x))));
-	   s_SBB_valoff (x, off = align (off, ADDR_ALIGN));
+	   off = align (off, ADDR_ALIGN);
+	   s_SBB_valoff (x, off);
 	}
 
 	lev_maxoff = off;

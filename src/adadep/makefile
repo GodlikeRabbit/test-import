@@ -1,6 +1,15 @@
 SHELL	= /bin/sh
 INCLUDE = ../view
-CFLAGS	= -c -O -I${INCLUDE} $(DEBUG)
+CC	= gcc
+SDKROOT	= /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+CFLAGS	= -isysroot $(SDKROOT) -std=gnu89 -O2 -w -Wno-error \
+	  -Wno-implicit-int \
+	  -Wno-implicit-function-declaration \
+	  -Wno-return-type \
+	  -Wno-int-conversion \
+	  -Wno-incompatible-pointer-types \
+	  -Wno-builtin-declaration-mismatch \
+	  -c -I${INCLUDE} $(DEBUG)
 YACC	= /usr/bin/yacc
 DEBUG	= 
 

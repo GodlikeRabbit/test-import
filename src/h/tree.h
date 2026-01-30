@@ -27,7 +27,9 @@ typedef	short	bool;
 
 #define	FALSE	0
 #define	TRUE	1
+#ifndef NULL
 #define	NULL	0
+#endif
 typedef	byte	discr;
 typedef	union tree_element *ac;
 typedef struct _triple TRIP;

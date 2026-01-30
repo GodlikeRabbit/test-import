@@ -3,6 +3,12 @@
 /*
  *	Generic instantiations
  */
+
+/* Forward declarations */
+static	bool	gen_eqsubs ();
+static	bool	geneqtypes ();
+static	ac	find_gensubs ();
+static	ac	find_ids ();
 
 /*
  *	Get a default value for generic parameter x.
@@ -312,11 +318,7 @@ ac	x;
 ac	td_genpar (actlist, act)
 ac	actlist;
 ac	act;
-{	static	bool	gen_eqsubs ();
-	static	bool	geneqtypes ();
-	static	ac	find_gensubs	();
-	static	ac find_ids	();
-
+{
 	ac	t1,
 		t2,
 		t3,

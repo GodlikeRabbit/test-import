@@ -30,7 +30,7 @@ static	bool	has_no_descr	();
 static	ac	agg_elem	();
 static	void	c_a_elem	();
 static	void	make_table	();
-static	bool	is_positional	();
+static	bool	cg_is_positional ();
 static	ac	arr_aggelem	();
 static	void	receldescriptor	();
 
@@ -1137,7 +1137,7 @@ ac	agg;
 }
 
 static
-bool	is_positional (cp)
+bool	cg_is_positional (cp)
 ac	cp;
 {
 	return g_fcompchoice (cp) == NULL;
@@ -1157,7 +1157,7 @@ int	i;
 	int	cnt = 0;
 
 	FORALL (cp, g_fcompas (agg)) {
-	   if (is_positional (cp)) {
+	   if (cg_is_positional (cp)) {
 	      if (cnt == i)
 	         return cp;
 	   }
